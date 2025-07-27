@@ -315,6 +315,7 @@
             button6.TabIndex = 8;
             button6.Text = "Peliculas";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -342,7 +343,7 @@
             Controls.Add(panel1);
             Controls.Add(panelMenu);
             Name = "Form1";
-            Text = "Proyecto Taquilla - Grupo 6";
+            Text = "Proyecto Taquilla";
             Load += Form1_Load;
             panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

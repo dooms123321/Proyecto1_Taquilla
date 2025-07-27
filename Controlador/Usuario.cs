@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System;
 
 namespace TaquillaPeliculas.Controlador
 {
@@ -25,14 +24,14 @@ namespace TaquillaPeliculas.Controlador
             Id_usuario = id_usuario;
         }
 
-        // Constructor con usuario y contraseña
+        //constructor con usuario y contraseña
         public UsuarioController(string usuarioNombre, string contraseña)
         {
             UsuarioNombre = usuarioNombre;
             Contraseña = contraseña;
         }
 
-        // Constructor con ID, usuario y contraseña
+        //constructor con id, usuario y contraseña
         public UsuarioController(int id_usuario, string usuarioNombre, string contraseña)
         {
             Id_usuario = id_usuario;
@@ -40,7 +39,7 @@ namespace TaquillaPeliculas.Controlador
             Contraseña = contraseña;
         }
 
-        // Método ToString para depuración
+        // metodo to-string para depuración
         public override string ToString()
         {
             return $"Usuario{{id_usuario={Id_usuario}, usuarioNombre={UsuarioNombre}, contraseña={Contraseña}}}";

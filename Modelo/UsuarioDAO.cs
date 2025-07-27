@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TaquillaPeliculas.Modelo;
+using Proyecto_Taquilla.Modelo;
+using Proyecto_Taquilla.Controlador;
 
-namespace TaquillaPeliculas.Modelos
+
+namespace Proyecto_Taquilla.Modelo
 {
     public class UsuarioDAO
     {

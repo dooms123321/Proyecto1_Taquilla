@@ -1,3 +1,5 @@
+using Proyecto_Taquilla.Vistas;
+
 namespace Prototipo_Taquilla_Cliente
 {
     public partial class Form1 : Form
@@ -5,6 +7,7 @@ namespace Prototipo_Taquilla_Cliente
         public Form1()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,6 +66,12 @@ namespace Prototipo_Taquilla_Cliente
                 panelServicio4.Visible = true; //Muestra el panel de servicios
             else
                 panelServicio4.Visible = false; //Oculta el panel de servicios
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            vistaPeliculas formPeliculas = new vistaPeliculas();
+            formPeliculas.Show();
         }
     }
 }

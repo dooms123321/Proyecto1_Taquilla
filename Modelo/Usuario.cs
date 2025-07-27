@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaquillaPeliculas.Modelos
+namespace Proyecto_Taquilla.Modelo
 {
     public class Usuario
     {
