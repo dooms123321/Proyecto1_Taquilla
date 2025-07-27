@@ -73,5 +73,11 @@ namespace Prototipo_Taquilla_Cliente
             vistaPeliculas formPeliculas = new vistaPeliculas();
             formPeliculas.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            vistaUsuarios formUsuarios = new vistaUsuarios();
+            formUsuarios.Show();
+        }
     }
 }

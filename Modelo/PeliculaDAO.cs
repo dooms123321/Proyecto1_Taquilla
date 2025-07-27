@@ -58,14 +58,20 @@ namespace Proyecto_Taquilla.Modelo
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "UPDATE pelicula SET id_pelicula = @id, nombre_pelicula = @nombre, descripcion = @descripcion WHERE id_pelicula = @id";
+                string query = "UPDATE pelicula SET nombre_pelicula = @nombre, descripcion = @descripcion WHERE id_pelicula = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre_Pelicula);
                 cmd.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
                 cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
-                cmd.ExecuteNonQuery();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+
+                if (filasAfectadas == 0)
+                {
+                    MessageBox.Show("No se encontró ninguna película con ese ID");
+                }
             }
         }
+
 
         public static void EliminarPelicula(int id_pelicula)
         {
