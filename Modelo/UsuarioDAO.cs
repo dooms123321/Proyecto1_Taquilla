@@ -13,7 +13,7 @@ namespace Proyecto_Taquilla.Modelo
     public class UsuarioDAO
     {
         private static readonly string SQL_SELECT = "SELECT id_usuario, usuario, contraseña FROM usuario";
-        private static readonly string SQL_INSERT = "INSERT INTO usuario(usuario, contraseña) VALUES(@usuario, @contraseña)";
+        private static readonly string SQL_INSERT = "INSERT INTO usuario(id_usuario, usuario, contraseña) VALUES(@id_usuario, @usuario, @contraseña)";
         private static readonly string SQL_UPDATE = "UPDATE usuario SET usuario = @usuario, contraseña = @contraseña WHERE id_usuario = @id_usuario";
         private static readonly string SQL_DELETE = "DELETE FROM usuario WHERE id_usuario = @id_usuario";
         private static readonly string SQL_QUERY = "SELECT id_usuario, usuario, contraseña FROM usuario WHERE usuario = @usuario";
@@ -47,6 +47,7 @@ namespace Proyecto_Taquilla.Modelo
             using (var conn = Conexion.ObtenerConexion())
             {
                 MySqlCommand cmd = new MySqlCommand(SQL_INSERT, conn);
+                cmd.Parameters.AddWithValue("@id_usuario", usuario.Id_usuario);
                 cmd.Parameters.AddWithValue("@usuario", usuario.UsuarioNombre);
                 cmd.Parameters.AddWithValue("@contraseña", usuario.Contraseña);
                 filasAfectadas = cmd.ExecuteNonQuery();

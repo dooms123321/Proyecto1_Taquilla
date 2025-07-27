@@ -331,6 +331,7 @@
             button5.TabIndex = 7;
             button5.Text = "Usuarios";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // Form1
             // 
