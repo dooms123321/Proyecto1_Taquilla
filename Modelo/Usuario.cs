@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Taquilla.Modelo
 {
+    //constructores de Usuario con getter y setter
     public class Usuario
     {
         public int Id_usuario { get; set; }
