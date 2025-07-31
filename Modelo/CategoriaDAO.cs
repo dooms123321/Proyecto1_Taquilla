@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//Cesar Estrada Elias 0901-22-10153
+using MySql.Data.MySqlClient;
 using Proyecto_Taquilla.Modelo;
 using System;
 using System.Collections.Generic;
