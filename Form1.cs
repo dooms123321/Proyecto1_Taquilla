@@ -79,5 +79,11 @@ namespace Prototipo_Taquilla_Cliente
             vistaUsuarios formUsuarios = new vistaUsuarios();
             formUsuarios.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            vistaCine formCine = new vistaCine();
+            formCine.Show();
+        }
     }
 }
