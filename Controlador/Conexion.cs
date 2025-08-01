@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 namespace Proyecto_Taquilla.Controlador
 {
     public class Conexion
-    {   //Conecta la base de datos desde un localhost (con puerto 3306) de la base de datos "siu" con el usuario "usuprueba" y su contraseña
+    {   //Conecta la base de datos desde un localhost (con puerto 3306) de la base de datos "Taquilla" con el usuario "root" y su contraseña
         private static readonly string connectionString = "server=localhost;port=3306;database=Taquilla;user=root;password=Cronopio0;SslMode=none";
 
         //Manejo de errores y excepciones con un trycatch para evitar que el programa falle en caso de error

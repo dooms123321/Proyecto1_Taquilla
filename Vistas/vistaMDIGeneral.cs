@@ -2,9 +2,9 @@ using Proyecto_Taquilla.Vistas;
 
 namespace Prototipo_Taquilla_Cliente
 {
-    public partial class Form1 : Form
+    public partial class vistaMDIGeneral : Form
     {
-        public Form1()
+        public vistaMDIGeneral()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
@@ -39,7 +39,14 @@ namespace Prototipo_Taquilla_Cliente
         //boton para salir
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea cerrar sesion?","Confirmar cerrar sesion",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                //regresa al login
+                vistaLogin login = new vistaLogin();
+                login.Show();
+                this.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
