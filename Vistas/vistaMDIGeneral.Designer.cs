@@ -1,6 +1,6 @@
 ﻿namespace Prototipo_Taquilla_Cliente
 {
-    partial class Form1
+    partial class vistaMDIGeneral
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vistaMDIGeneral));
             panelMenu = new Panel();
             pictureBox4 = new PictureBox();
             button4 = new Button();
@@ -37,7 +37,7 @@
             button1 = new Button();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            btnCerrar = new PictureBox();
+            btnCerrarSesion = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrarSesion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
             panelServicio4.SuspendLayout();
@@ -70,7 +70,7 @@
             panelMenu.Controls.Add(button1);
             panelMenu.Controls.Add(pictureBox3);
             panelMenu.Controls.Add(pictureBox2);
-            panelMenu.Controls.Add(btnCerrar);
+            panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(pictureBox1);
             panelMenu.Dock = DockStyle.Top;
             panelMenu.Location = new Point(0, 0);
@@ -81,9 +81,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1025, 0);
+            pictureBox4.Location = new Point(1002, 3);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(53, 44);
+            pictureBox4.Size = new Size(63, 54);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -185,18 +185,18 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // btnCerrar
+            // btnCerrarSesion
             // 
-            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1100, 3);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(45, 41);
-            btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
-            btnCerrar.TabIndex = 1;
-            btnCerrar.TabStop = false;
-            btnCerrar.Click += btnCerrar_Click;
+            btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrarSesion.Cursor = Cursors.Hand;
+            btnCerrarSesion.Image = (Image)resources.GetObject("btnCerrarSesion.Image");
+            btnCerrarSesion.Location = new Point(1081, 3);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(64, 54);
+            btnCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
+            btnCerrarSesion.TabIndex = 1;
+            btnCerrarSesion.TabStop = false;
+            btnCerrarSesion.Click += btnCerrar_Click;
             // 
             // pictureBox1
             // 
@@ -298,8 +298,9 @@
             button7.Name = "button7";
             button7.Size = new Size(198, 40);
             button7.TabIndex = 9;
-            button7.Text = "Categorias";
+            button7.Text = "Cine";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -333,7 +334,7 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
-            // Form1
+            // vistaMDIGeneral
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -343,14 +344,14 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panelMenu);
-            Name = "Form1";
+            Name = "vistaMDIGeneral";
             Text = "Proyecto Taquilla";
             Load += Form1_Load;
             panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrarSesion).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panelServicio4.ResumeLayout(false);
@@ -365,7 +366,7 @@
         private Panel panel3;
         private Panel panel4;
         private PictureBox pictureBox1;
-        private PictureBox btnCerrar;
+        private PictureBox btnCerrarSesion;
         private Button button1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
