@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-  <div class="logo">🎬 Cinépolis</div>
+  <div class="logo"> <a class="logo" href="">🎬 Cinépolis</a></div>
 
   <div class="header-actions">
     <div class="filtros-header">
@@ -38,7 +38,10 @@
       <a href="#cartelera" class="menu-btn">Cartelera</a>
       <button class="login-btn">👤 Ingresar</button>
     </nav>
+    <button id="cart-btn" class="menu-btn">🛒 Carrito (<span id="cart-count">0</span>)</button>
+
   </div>
+
 </header>
 
   <section class="carrousel-container">
@@ -51,6 +54,8 @@
     <div class="cartelera-grid" id="cartelera"></div>
   </main>
 
+
+
   <footer>
     <p>© Cinépolis | Todos los derechos reservados</p>
   </footer>
@@ -62,8 +67,20 @@
       <input type="text" placeholder="Usuario" />
       <input type="password" placeholder="Contraseña" />
       <button class="login-submit">Ingresar</button>
-    </div>
+          <a href="./Formulario Registro.html"><h3>¿No tienes cuenta? Crea Una</h3></a>
+          </div>
+
   </div>
+<div id="modalCarrito" class="modal">
+  <div class="modal-content" style="width: 90%; max-width: 600px;">
+    <span class="close close-cart">&times;</span>
+    <h3>🎟️ Carrito de Compras</h3>
+    <ul id="cart-list" style="list-style:none; padding:0;"></ul>
+    <p style="margin-top: 16px;"><strong>Total boletos:</strong> <span id="total-items">0</span></p>
+  </div>
+</div>
+
+  
 
   <script src="script.js"></script>
 </body>
