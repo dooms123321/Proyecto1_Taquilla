@@ -173,3 +173,49 @@ closeBtn.addEventListener('click', () => {
 window.addEventListener('click', e => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
+let carrito = [];
+
+function actualizarCarritoUI() {
+  const lista = document.getElementById("cart-list");
+  const contador = document.getElementById("cart-count");
+  const total = document.getElementById("total-items");
+
+  lista.innerHTML = '';
+  carrito.forEach((item, i) => {
+    const li = document.createElement("li");
+    li.style.marginBottom = "10px";
+    li.innerHTML = `
+      🎬 <strong>${item.nombre}</strong> - ${item.horario} (${item.region}) 
+      <button style="margin-left:10px;" onclick="eliminarDelCarrito(${i})">❌</button>`;
+    lista.appendChild(li);
+  });
+
+  contador.textContent = carrito.length;
+  total.textContent = carrito.length;
+}
+
+function agregarAlCarrito(pelicula) {
+  carrito.push(pelicula);
+  actualizarCarritoUI();
+}
+
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  actualizarCarritoUI();
+}
+
+
+const modalCarrito = document.getElementById("modalCarrito");
+const cartBtn = document.getElementById("cart-btn");
+const closeCartBtn = document.querySelector(".close-cart");
+
+cartBtn.addEventListener("click", () => {
+  modalCarrito.style.display = "block";
+});
+closeCartBtn.addEventListener("click", () => {
+  modalCarrito.style.display = "none";
+});
+window.addEventListener("click", e => {
+  if (e.target === modalCarrito) modalCarrito.style.display = "none";
+});
