@@ -74,16 +74,18 @@
             panelMenu.Controls.Add(pictureBox1);
             panelMenu.Dock = DockStyle.Top;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(4, 4, 4, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(1145, 86);
+            panelMenu.Size = new Size(1431, 108);
             panelMenu.TabIndex = 1;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1025, 0);
+            pictureBox4.Location = new Point(1281, 0);
+            pictureBox4.Margin = new Padding(4, 4, 4, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(53, 44);
+            pictureBox4.Size = new Size(66, 55);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
@@ -97,9 +99,10 @@
             button4.ForeColor = Color.White;
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(798, 26);
+            button4.Location = new Point(998, 32);
+            button4.Margin = new Padding(4, 4, 4, 4);
             button4.Name = "button4";
-            button4.Size = new Size(198, 40);
+            button4.Size = new Size(248, 50);
             button4.TabIndex = 5;
             button4.Text = "Seguridad";
             button4.UseVisualStyleBackColor = true;
@@ -116,9 +119,10 @@
             button3.ForeColor = Color.White;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(604, 26);
+            button3.Location = new Point(755, 32);
+            button3.Margin = new Padding(4, 4, 4, 4);
             button3.Name = "button3";
-            button3.Size = new Size(198, 40);
+            button3.Size = new Size(248, 50);
             button3.TabIndex = 4;
             button3.Text = "Reportes";
             button3.UseVisualStyleBackColor = true;
@@ -134,9 +138,10 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(377, 26);
+            button2.Location = new Point(471, 32);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(198, 40);
+            button2.Size = new Size(248, 50);
             button2.TabIndex = 4;
             button2.Text = "Mantenimientos";
             button2.TextAlign = ContentAlignment.MiddleRight;
@@ -154,9 +159,10 @@
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(173, 26);
+            button1.Location = new Point(216, 32);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(198, 40);
+            button1.Size = new Size(248, 50);
             button1.TabIndex = 3;
             button1.Text = "Cartelera";
             button1.UseVisualStyleBackColor = true;
@@ -167,7 +173,8 @@
             // 
             pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(775, 12);
+            pictureBox3.Location = new Point(969, 15);
+            pictureBox3.Margin = new Padding(4, 4, 4, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(0, 0);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -178,7 +185,8 @@
             // 
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(826, 12);
+            pictureBox2.Location = new Point(1032, 15);
+            pictureBox2.Margin = new Padding(4, 4, 4, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(0, 0);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -190,9 +198,10 @@
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1100, 3);
+            btnCerrar.Location = new Point(1375, 4);
+            btnCerrar.Margin = new Padding(4, 4, 4, 4);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(45, 41);
+            btnCerrar.Size = new Size(56, 51);
             btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             btnCerrar.TabIndex = 1;
             btnCerrar.TabStop = false;
@@ -202,8 +211,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(160, 86);
+            pictureBox1.Size = new Size(200, 108);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -212,27 +222,30 @@
             // 
             panel1.BackColor = Color.FromArgb(51, 62, 80);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 86);
+            panel1.Location = new Point(0, 108);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(5, 611);
+            panel1.Size = new Size(6, 763);
             panel1.TabIndex = 2;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(51, 62, 80);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1140, 86);
+            panel2.Location = new Point(1425, 108);
+            panel2.Margin = new Padding(4, 4, 4, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(5, 611);
+            panel2.Size = new Size(6, 763);
             panel2.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(51, 62, 80);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(5, 697);
+            panel3.Location = new Point(6, 871);
+            panel3.Margin = new Padding(4, 4, 4, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1135, 0);
+            panel3.Size = new Size(1419, 0);
             panel3.TabIndex = 4;
             // 
             // panel4
@@ -242,9 +255,10 @@
             panel4.Controls.Add(panelServicio4);
             panel4.Controls.Add(panelServicios);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(5, 86);
+            panel4.Location = new Point(6, 108);
+            panel4.Margin = new Padding(4, 4, 4, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1135, 611);
+            panel4.Size = new Size(1419, 763);
             panel4.TabIndex = 5;
             panel4.Paint += panel4_Paint;
             // 
@@ -252,9 +266,10 @@
             // 
             panelServicio4.BackColor = Color.FromArgb(51, 62, 80);
             panelServicio4.Controls.Add(button10);
-            panelServicio4.Location = new Point(791, -2);
+            panelServicio4.Location = new Point(989, -2);
+            panelServicio4.Margin = new Padding(4, 4, 4, 4);
             panelServicio4.Name = "panelServicio4";
-            panelServicio4.Size = new Size(198, 46);
+            panelServicio4.Size = new Size(248, 58);
             panelServicio4.TabIndex = 1;
             panelServicio4.Visible = false;
             // 
@@ -267,8 +282,9 @@
             button10.ForeColor = Color.White;
             button10.ImageAlign = ContentAlignment.MiddleLeft;
             button10.Location = new Point(0, 0);
+            button10.Margin = new Padding(4, 4, 4, 4);
             button10.Name = "button10";
-            button10.Size = new Size(198, 46);
+            button10.Size = new Size(248, 58);
             button10.TabIndex = 7;
             button10.Text = "Bitacora";
             button10.UseVisualStyleBackColor = true;
@@ -279,9 +295,10 @@
             panelServicios.Controls.Add(button7);
             panelServicios.Controls.Add(button6);
             panelServicios.Controls.Add(button5);
-            panelServicios.Location = new Point(370, -2);
+            panelServicios.Location = new Point(462, -2);
+            panelServicios.Margin = new Padding(4, 4, 4, 4);
             panelServicios.Name = "panelServicios";
-            panelServicios.Size = new Size(198, 153);
+            panelServicios.Size = new Size(248, 191);
             panelServicios.TabIndex = 0;
             panelServicios.Visible = false;
             panelServicios.Paint += panelServicios_Paint;
@@ -294,12 +311,14 @@
             button7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.ForeColor = Color.White;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(0, 100);
+            button7.Location = new Point(0, 125);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(198, 40);
+            button7.Size = new Size(248, 50);
             button7.TabIndex = 9;
-            button7.Text = "Categorias";
+            button7.Text = "Cine";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -309,9 +328,10 @@
             button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = Color.White;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(0, 53);
+            button6.Location = new Point(0, 66);
+            button6.Margin = new Padding(4, 4, 4, 4);
             button6.Name = "button6";
-            button6.Size = new Size(198, 40);
+            button6.Size = new Size(248, 50);
             button6.TabIndex = 8;
             button6.Text = "Peliculas";
             button6.UseVisualStyleBackColor = true;
@@ -325,9 +345,10 @@
             button5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = Color.White;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(0, 6);
+            button5.Location = new Point(0, 8);
+            button5.Margin = new Padding(4, 4, 4, 4);
             button5.Name = "button5";
-            button5.Size = new Size(198, 40);
+            button5.Size = new Size(248, 50);
             button5.TabIndex = 7;
             button5.Text = "Usuarios";
             button5.UseVisualStyleBackColor = true;
@@ -335,14 +356,15 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1145, 697);
+            ClientSize = new Size(1431, 871);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(panelMenu);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Form1";
             Text = "Proyecto Taquilla";
             Load += Form1_Load;
