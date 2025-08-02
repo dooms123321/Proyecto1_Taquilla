@@ -39,7 +39,7 @@ namespace Prototipo_Taquilla_Cliente
         //boton para salir
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea cerrar sesion?","Confirmar cerrar sesion",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea cerrar sesion?", "Confirmar cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 //regresa al login
@@ -77,20 +77,26 @@ namespace Prototipo_Taquilla_Cliente
 
         private void button6_Click(object sender, EventArgs e)
         {
-            vistaPeliculas formPeliculas = new vistaPeliculas();
-            formPeliculas.Show();
+            vistaPeliculas ventanaPeliculas = new vistaPeliculas();
+            ventanaPeliculas.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            vistaUsuarios formUsuarios = new vistaUsuarios();
-            formUsuarios.Show();
+            vistaUsuarios ventanaUsuarios = new vistaUsuarios();
+            ventanaUsuarios.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            vistaCine formCine = new vistaCine();
-            formCine.Show();
+            vistaCine ventanaCine = new vistaCine();
+            ventanaCine.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            vistaBitacora ventanaBitacora = new vistaBitacora();
+            ventanaBitacora.Show();
         }
     }
 }

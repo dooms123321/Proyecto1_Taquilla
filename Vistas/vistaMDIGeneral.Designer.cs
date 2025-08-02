@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vistaMDIGeneral));
             panelMenu = new Panel();
             pictureBox4 = new PictureBox();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            txtSeguridad = new Button();
+            txtReporte = new Button();
+            txtMantenimiento = new Button();
+            txtCartelera = new Button();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             btnCerrarSesion = new PictureBox();
@@ -44,11 +44,11 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panelServicio4 = new Panel();
-            button10 = new Button();
+            txtBitacora = new Button();
             panelServicios = new Panel();
             button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
+            txtPelicula = new Button();
+            txtUsuarios = new Button();
             panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -64,10 +64,10 @@
             // 
             panelMenu.BackColor = Color.FromArgb(51, 62, 80);
             panelMenu.Controls.Add(pictureBox4);
-            panelMenu.Controls.Add(button4);
-            panelMenu.Controls.Add(button3);
-            panelMenu.Controls.Add(button2);
-            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(txtSeguridad);
+            panelMenu.Controls.Add(txtReporte);
+            panelMenu.Controls.Add(txtMantenimiento);
+            panelMenu.Controls.Add(txtCartelera);
             panelMenu.Controls.Add(pictureBox3);
             panelMenu.Controls.Add(pictureBox2);
             panelMenu.Controls.Add(btnCerrarSesion);
@@ -88,80 +88,80 @@
             pictureBox4.TabIndex = 6;
             pictureBox4.TabStop = false;
             // 
-            // button4
+            // txtSeguridad
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(798, 26);
-            button4.Name = "button4";
-            button4.Size = new Size(198, 40);
-            button4.TabIndex = 5;
-            button4.Text = "Seguridad";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            button4.MouseEnter += btnMouseEntrada;
-            button4.MouseLeave += btnMouseSalida;
+            txtSeguridad.FlatAppearance.BorderSize = 0;
+            txtSeguridad.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            txtSeguridad.FlatStyle = FlatStyle.Flat;
+            txtSeguridad.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSeguridad.ForeColor = Color.White;
+            txtSeguridad.Image = (Image)resources.GetObject("txtSeguridad.Image");
+            txtSeguridad.ImageAlign = ContentAlignment.MiddleLeft;
+            txtSeguridad.Location = new Point(798, 26);
+            txtSeguridad.Name = "txtSeguridad";
+            txtSeguridad.Size = new Size(198, 40);
+            txtSeguridad.TabIndex = 5;
+            txtSeguridad.Text = "Seguridad";
+            txtSeguridad.UseVisualStyleBackColor = true;
+            txtSeguridad.Click += button4_Click;
+            txtSeguridad.MouseEnter += btnMouseEntrada;
+            txtSeguridad.MouseLeave += btnMouseSalida;
             // 
-            // button3
+            // txtReporte
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(604, 26);
-            button3.Name = "button3";
-            button3.Size = new Size(198, 40);
-            button3.TabIndex = 4;
-            button3.Text = "Reportes";
-            button3.UseVisualStyleBackColor = true;
-            button3.MouseEnter += btnMouseEntrada;
-            button3.MouseLeave += btnMouseSalida;
+            txtReporte.FlatAppearance.BorderSize = 0;
+            txtReporte.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            txtReporte.FlatStyle = FlatStyle.Flat;
+            txtReporte.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtReporte.ForeColor = Color.White;
+            txtReporte.Image = (Image)resources.GetObject("txtReporte.Image");
+            txtReporte.ImageAlign = ContentAlignment.MiddleLeft;
+            txtReporte.Location = new Point(604, 26);
+            txtReporte.Name = "txtReporte";
+            txtReporte.Size = new Size(198, 40);
+            txtReporte.TabIndex = 4;
+            txtReporte.Text = "Reportes";
+            txtReporte.UseVisualStyleBackColor = true;
+            txtReporte.MouseEnter += btnMouseEntrada;
+            txtReporte.MouseLeave += btnMouseSalida;
             // 
-            // button2
+            // txtMantenimiento
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(377, 26);
-            button2.Name = "button2";
-            button2.Size = new Size(198, 40);
-            button2.TabIndex = 4;
-            button2.Text = "Mantenimientos";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            button2.MouseEnter += btnMouseEntrada;
-            button2.MouseLeave += btnMouseSalida;
+            txtMantenimiento.FlatAppearance.BorderSize = 0;
+            txtMantenimiento.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            txtMantenimiento.FlatStyle = FlatStyle.Flat;
+            txtMantenimiento.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtMantenimiento.ForeColor = Color.White;
+            txtMantenimiento.Image = (Image)resources.GetObject("txtMantenimiento.Image");
+            txtMantenimiento.ImageAlign = ContentAlignment.MiddleLeft;
+            txtMantenimiento.Location = new Point(377, 26);
+            txtMantenimiento.Name = "txtMantenimiento";
+            txtMantenimiento.Size = new Size(198, 40);
+            txtMantenimiento.TabIndex = 4;
+            txtMantenimiento.Text = "Mantenimientos";
+            txtMantenimiento.TextAlign = ContentAlignment.MiddleRight;
+            txtMantenimiento.UseVisualStyleBackColor = true;
+            txtMantenimiento.Click += button2_Click;
+            txtMantenimiento.MouseEnter += btnMouseEntrada;
+            txtMantenimiento.MouseLeave += btnMouseSalida;
             // 
-            // button1
+            // txtCartelera
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(173, 26);
-            button1.Name = "button1";
-            button1.Size = new Size(198, 40);
-            button1.TabIndex = 3;
-            button1.Text = "Cartelera";
-            button1.UseVisualStyleBackColor = true;
-            button1.MouseEnter += btnMouseEntrada;
-            button1.MouseLeave += btnMouseSalida;
+            txtCartelera.FlatAppearance.BorderSize = 0;
+            txtCartelera.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            txtCartelera.FlatStyle = FlatStyle.Flat;
+            txtCartelera.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCartelera.ForeColor = Color.White;
+            txtCartelera.Image = (Image)resources.GetObject("txtCartelera.Image");
+            txtCartelera.ImageAlign = ContentAlignment.MiddleLeft;
+            txtCartelera.Location = new Point(173, 26);
+            txtCartelera.Name = "txtCartelera";
+            txtCartelera.Size = new Size(198, 40);
+            txtCartelera.TabIndex = 3;
+            txtCartelera.Text = "Cartelera";
+            txtCartelera.UseVisualStyleBackColor = true;
+            txtCartelera.MouseEnter += btnMouseEntrada;
+            txtCartelera.MouseLeave += btnMouseSalida;
             // 
             // pictureBox3
             // 
@@ -251,34 +251,35 @@
             // panelServicio4
             // 
             panelServicio4.BackColor = Color.FromArgb(51, 62, 80);
-            panelServicio4.Controls.Add(button10);
+            panelServicio4.Controls.Add(txtBitacora);
             panelServicio4.Location = new Point(791, -2);
             panelServicio4.Name = "panelServicio4";
             panelServicio4.Size = new Size(198, 46);
             panelServicio4.TabIndex = 1;
             panelServicio4.Visible = false;
             // 
-            // button10
+            // txtBitacora
             // 
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(0, 0);
-            button10.Name = "button10";
-            button10.Size = new Size(198, 46);
-            button10.TabIndex = 7;
-            button10.Text = "Bitacora";
-            button10.UseVisualStyleBackColor = true;
+            txtBitacora.FlatAppearance.BorderSize = 0;
+            txtBitacora.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
+            txtBitacora.FlatStyle = FlatStyle.Flat;
+            txtBitacora.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtBitacora.ForeColor = Color.White;
+            txtBitacora.ImageAlign = ContentAlignment.MiddleLeft;
+            txtBitacora.Location = new Point(0, 0);
+            txtBitacora.Name = "txtBitacora";
+            txtBitacora.Size = new Size(198, 46);
+            txtBitacora.TabIndex = 7;
+            txtBitacora.Text = "Bitacora";
+            txtBitacora.UseVisualStyleBackColor = true;
+            txtBitacora.Click += button10_Click;
             // 
             // panelServicios
             // 
             panelServicios.BackColor = Color.FromArgb(51, 62, 80);
             panelServicios.Controls.Add(button7);
-            panelServicios.Controls.Add(button6);
-            panelServicios.Controls.Add(button5);
+            panelServicios.Controls.Add(txtPelicula);
+            panelServicios.Controls.Add(txtUsuarios);
             panelServicios.Location = new Point(370, -2);
             panelServicios.Name = "panelServicios";
             panelServicios.Size = new Size(198, 153);
@@ -302,37 +303,37 @@
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
-            // button6
+            // txtPelicula
             // 
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(0, 53);
-            button6.Name = "button6";
-            button6.Size = new Size(198, 40);
-            button6.TabIndex = 8;
-            button6.Text = "Peliculas";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            txtPelicula.FlatAppearance.BorderSize = 0;
+            txtPelicula.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
+            txtPelicula.FlatStyle = FlatStyle.Flat;
+            txtPelicula.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPelicula.ForeColor = Color.White;
+            txtPelicula.ImageAlign = ContentAlignment.MiddleLeft;
+            txtPelicula.Location = new Point(0, 53);
+            txtPelicula.Name = "txtPelicula";
+            txtPelicula.Size = new Size(198, 40);
+            txtPelicula.TabIndex = 8;
+            txtPelicula.Text = "Peliculas";
+            txtPelicula.UseVisualStyleBackColor = true;
+            txtPelicula.Click += button6_Click;
             // 
-            // button5
+            // txtUsuarios
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(0, 6);
-            button5.Name = "button5";
-            button5.Size = new Size(198, 40);
-            button5.TabIndex = 7;
-            button5.Text = "Usuarios";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            txtUsuarios.FlatAppearance.BorderSize = 0;
+            txtUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 210, 2);
+            txtUsuarios.FlatStyle = FlatStyle.Flat;
+            txtUsuarios.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUsuarios.ForeColor = Color.White;
+            txtUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            txtUsuarios.Location = new Point(0, 6);
+            txtUsuarios.Name = "txtUsuarios";
+            txtUsuarios.Size = new Size(198, 40);
+            txtUsuarios.TabIndex = 7;
+            txtUsuarios.Text = "Usuarios";
+            txtUsuarios.UseVisualStyleBackColor = true;
+            txtUsuarios.Click += button5_Click;
             // 
             // vistaMDIGeneral
             // 
@@ -367,18 +368,18 @@
         private Panel panel4;
         private PictureBox pictureBox1;
         private PictureBox btnCerrarSesion;
-        private Button button1;
+        private Button txtCartelera;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button txtSeguridad;
+        private Button txtReporte;
+        private Button txtMantenimiento;
         private PictureBox pictureBox4;
         private Panel panelServicios;
-        private Button button5;
+        private Button txtUsuarios;
         private Button button7;
-        private Button button6;
+        private Button txtPelicula;
         private Panel panelServicio4;
-        private Button button10;
+        private Button txtBitacora;
     }
 }

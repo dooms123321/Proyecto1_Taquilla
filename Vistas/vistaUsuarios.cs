@@ -1,4 +1,5 @@
-﻿using Proyecto_Taquilla.Modelo;
+﻿using Proyecto_Taquilla.Controlador;
+using Proyecto_Taquilla.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,10 +11,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaquillaPeliculas.Controlador;
 
+
+
 namespace Proyecto_Taquilla.Vistas
 {
     public partial class vistaUsuarios : Form
     {
+        //codigo aplicacion y objeto bitacoraAuditoria para registrar acciones del sistema en auditoria
+        int codigoAplicacion = 2010; //codigo de aplicacion "Usuario"
+        BitacoraControlador bitacoraAuditoria = new BitacoraControlador();
+
+
         private UsuarioController controller = new UsuarioController();
         public vistaUsuarios()
         {
@@ -55,6 +63,9 @@ namespace Proyecto_Taquilla.Vistas
             controller.AgregarUsuario(id, nombre, contraseña);
             CargarUsuarios();
             LimpiarCampos();
+
+            // Registrar acción en bitacora de insertar "insert"
+            bitacoraAuditoria.InsertBitacora(usuarioConectadoControlador.IdUsuario, codigoAplicacion, "INS");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -71,6 +82,9 @@ namespace Proyecto_Taquilla.Vistas
             controller.ActualizarUsuario(id, nombre, contraseña);
             CargarUsuarios();
             LimpiarCampos();
+
+            //registrar acción en bitacora de actualidar "update"
+            bitacoraAuditoria.InsertBitacora(usuarioConectadoControlador.IdUsuario, codigoAplicacion, "UPD");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -88,6 +102,9 @@ namespace Proyecto_Taquilla.Vistas
                 CargarUsuarios();
                 LimpiarCampos();
             }
+
+            //registrar acción en bitacora de eliminar "delete"
+            bitacoraAuditoria.InsertBitacora(usuarioConectadoControlador.IdUsuario, codigoAplicacion, "DEL");
         }
 
         private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

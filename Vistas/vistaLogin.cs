@@ -44,13 +44,14 @@ namespace Proyecto_Taquilla.Vistas
                 {
                     MessageBox.Show("Bienvenido al SISTEMA", "Mensaje de bienvenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    //guarda el usuario y su id en el controlador para acceder a ellos dentro del sistema
+                    usuarioConectadoControlador.IdUsuario = usuarioAConsultar.Id_usuario;
+                    usuarioConectadoControlador.NombreUsuario = usuarioAConsultar.UsuarioNombre;
+
                     //Falta modificar aquí - para que se guarde el usuario a bitacora
-
-                    //UsuarioConectado.IdUsuario = usuario.Id_usuario;
-                    //UsuarioConectado.NombreUsuario = usuario.UsuarioNombre;
-
-                    //Bitacora bitacora = new Bitacora();
-                    //bitacora.RegistrarEntrada(usuario.Id_usuario, 1000, "LGI");
+                    //Ya se termino de modificar, ahora si lo guarda en la bitacora
+                    BitacoraControlador bitacora = new BitacoraControlador();
+                    bitacora.InsertBitacora(usuarioAConsultar.Id_usuario, 1000, "LGI");
 
                     vistaMDIGeneral ventanaMDIGeneral = new vistaMDIGeneral();
                     ventanaMDIGeneral.Show();
