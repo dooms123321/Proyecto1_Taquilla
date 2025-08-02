@@ -11,7 +11,7 @@ namespace Proyecto_Taquilla.Modelo
 {
     public class PeliculaDAO
     {                                                                                             //cambiar contraseña Cronopio0
-        private static string connectionString = "server=localhost; database=Taquilla; user=root; password=cesar123;";
+        private static string connectionString = "server=nozomi.proxy.rlwy.net;port=38006;database=Taquilla;user=root;password=SsXjimxwICYsLVqKRBFbNSBSfrEZrtUS;SslMode=none";
 
         public static List<Pelicula> ObtenerPeliculas()
         {

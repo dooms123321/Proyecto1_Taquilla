@@ -15,7 +15,7 @@ namespace Proyecto_Taquilla.Controlador
 {
     public class FuncionDAO
     {
-        private static string connectionString = "server=localhost; database=Taquilla; user=root; password=cesar123";
+        private static string connectionString = "server=nozomi.proxy.rlwy.net;port=38006;database=Taquilla;user=root;password=SsXjimxwICYsLVqKRBFbNSBSfrEZrtUS;SslMode=none";
 
         // Obtener todas las funciones
         public static List<Funcion> ObtenerFunciones()

@@ -12,7 +12,7 @@ namespace Proyecto_Taquilla.Controlador
 {
     public class CineDAO
     {
-        private static string connectionString = "server=localhost; database=Taquilla; user=root; password=cesar123";
+        private static string connectionString = "server=nozomi.proxy.rlwy.net;port=38006;database=Taquilla;user=root;password=SsXjimxwICYsLVqKRBFbNSBSfrEZrtUS;SslMode=none";
         public static List<Cine> ObtenerCine()
         {
             List<Cine> lista = new List<Cine>();
