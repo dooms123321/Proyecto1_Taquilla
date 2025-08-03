@@ -72,7 +72,7 @@ namespace Proyecto_Taquilla.Controlador
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string sql = "SELECT id_pelicula, nombre_pelicula FROM Pelicula";
+                string sql = "SELECT id_pelicula, nombre_pelicula FROM pelicula";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 using (MySqlDataReader reader = cmd.ExecuteReader())//reviasr
                 {
