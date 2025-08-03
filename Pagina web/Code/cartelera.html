@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartelera Cinépolis</title>
+  <link rel="stylesheet" href="csscartelera.css" />
+</head>
+<body>
+  <header>
+  <div class="logo">🎬 Cinépolis</div>
+
+  <div class="header-actions">
+    <div class="filtros-header">
+      <label for="filtroRegion">Región:</label>
+      <select id="filtroRegion">
+        <option value="">Todas las regiones</option>
+        <option value="Guatemala">Guatemala</option>
+        <option value="Quetzaltenango">Quetzaltenango</option>
+        <option value="Quiche">Quiché</option>
+        <option value="Peten">Petén</option>
+        <option value="Sacatepequez">Sacatepéquez</option>
+      </select>
+
+      <label for="filtroCine">Cine:</label>
+      <select id="filtroCine">
+        <option value="">Todas las categorías</option>
+        <option value="Infantil">Infantil</option>
+        <option value="Acción">Acción</option>
+        <option value="Drama">Drama</option>
+        <option value="Comedia">Comedia</option>
+      </select>
+    </div>
+
+    <nav class="nav-right">
+      <a href="vista clientes.html" class="menu-btn">Inicio</a>
+      <a href="cartelera.html" class="menu-btn">Cartelera</a>
+      <button class="login-btn">👤 Ingresar</button>
+    </nav>
+  </div>
+</header>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Complejos</h2>
+      <ul>
+        <li onclick="renderCartelera('Cinépolis Cayalá')">Cinépolis Cayalá</li>
+        <li onclick="renderCartelera('Cinépolis El Frutal')">El Frutal</li>
+        <li onclick="renderCartelera('Cinépolis Oakland Mall')">Oakland Mall</li>
+        <li onclick="renderCartelera('Cinépolis Portales')">Portales</li>
+      </ul>
+    </aside>
+
+    <main class="cartelera">
+      <h2 id="tituloComplejo">Cartelera - Cinépolis Cayalá</h2>
+      <div id="peliculasLista"></div>
+    </main>
+  </div>
+
+  <script src="cartelera.js"></script>
+</body>
+</html>

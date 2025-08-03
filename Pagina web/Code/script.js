@@ -2,28 +2,61 @@
 const estrenos = [
   {
     nombre: "Superman",
-    imagen: "superman.jpg",
+    imagen: "Sources/superman.jpg",
     mensaje: "🎟️ Preventa: Superman"
   },
   {
     nombre: "Jurassic World Renace",
-    imagen: "jurassic.jpg",
+    imagen: "Sources/jurassic.jpg",
     mensaje: "🎬 Próximo estreno: Jurassic World Renace"
   },
   {
     nombre: "Pitufos",
-    imagen: "pitufos.jpg",
+    imagen: "Sources/pitufos.jpg",
     mensaje: "🌀 Próximo estreno: Pitufos"
   }
 ];
+
+// 📽️ Renderiza el carrusel
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('carrousel-track');
+
+  estrenos.forEach(e => {
+    const item = document.createElement('div');
+    item.className = 'carrousel-item';
+    item.innerHTML = `
+      <img src="${e.imagen}" alt="${e.nombre}" onerror="this.src='https://via.placeholder.com/800x400?text=Imagen+no+disponible'">
+      <div class="carrousel-caption">${e.mensaje}</div>
+    `;
+    track.appendChild(item);
+  });
+
+  // Clona el primer elemento para efecto de bucle
+  const firstClone = track.firstElementChild.cloneNode(true);
+  track.appendChild(firstClone);
+
+  let currentIndex = 0;
+  const totalItems = track.children.length;
+
+  setInterval(() => {
+    currentIndex++;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    if (currentIndex === totalItems - 1) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        currentIndex = 0;
+      }, 600);
+    }
+  }, 4000);
+});
 
 // 🗂️ Películas en cartelera
 const peliculasCartelera = [
   {
     nombre: "Deadpool",
-    horario: "7:00 PM",
-    region: "Guatemala",
-    categoria: "Acción",
     imagen: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/02cc1333658190.56b2c8ea3720a.png"
   },
   {
@@ -35,77 +68,29 @@ const peliculasCartelera = [
   },
   {
     nombre: "Jurassic World Renace",
-    horario: "6:00 PM",
-    region: "Guatemala",
-    categoria: "Acción",
     imagen: "https://image.tmdb.org/t/p/original/q0fGCmjLu42MPlSO9OYWpI5w86I.jpg"
   },
   {
     nombre: "Paddington 3",
-    horario: "4:00 PM",
-    region: "Guatemala",
-    categoria: "Infantil",
     imagen: "https://via.placeholder.com/400x260?text=Paddington+3"
   },
   {
     nombre: "Los Becarios",
-    horario: "8:30 PM",
-    region: "Quetzaltenango",
-    categoria: "Comedia",
     imagen: "https://via.placeholder.com/400x260?text=Los+Becarios"
   },
   {
     nombre: "Guardianes Galácticos",
-    horario: "6:45 PM",
-    region: "Guatemala",
-    categoria: "Acción",
     imagen: "https://via.placeholder.com/400x260?text=Guardianes+Galácticos"
   },
   {
     nombre: "La Casa Encantada",
-    horario: "7:15 PM",
-    region: "Quetzaltenango",
-    categoria: "Infantil",
     imagen: "https://via.placeholder.com/400x260?text=La+Casa+Encantada"
   },
   {
     nombre: "Código Final",
-    horario: "9:30 PM",
-    region: "Quetzaltenango",
-    categoria: "Acción",
     imagen: "https://via.placeholder.com/400x260?text=Código+Final"
   },
 ];
-
-// 📽️ Renderiza el carrusel
-const track = document.getElementById('carrousel-track');
-estrenos.forEach(e => {
-  const item = document.createElement('div');
-  item.className = 'carrousel-item';
-  item.innerHTML = `
-    <img src="${e.imagen}" alt="${e.nombre}">
-    <div class="carrousel-caption">${e.mensaje}</div>`;
-  track.appendChild(item);
-});
-const firstClone = track.firstElementChild.cloneNode(true);
-track.appendChild(firstClone);
-
-let currentIndex = 0;
-const totalItems = track.children.length;
-
-setInterval(() => {
-  currentIndex++;
-  track.style.transition = 'transform 0.5s ease-in-out';
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-  if (currentIndex === totalItems - 1) {
-    setTimeout(() => {
-      track.style.transition = 'none';
-      track.style.transform = 'translateX(0)';
-      currentIndex = 0;
-    }, 600);
-  }
-}, 4000);
 
 // 🎞️ Renderiza las películas en cartelera
 function renderPeliculas(filtradas) {
@@ -122,13 +107,6 @@ function renderPeliculas(filtradas) {
     card.className = 'pelicula-card';
     card.innerHTML = `
       <img class="pelicula-img" src="${p.imagen}" alt="${p.nombre}">
-      <div class="pelicula-info">
-        <h3>${p.nombre}</h3>
-        <p><strong>Horario:</strong> ${p.horario}</p>
-        <p><strong>Región:</strong> ${p.region}</p>
-        <p><strong>Categoría:</strong> ${p.categoria}</p>
-        <button>🎟️ Comprar Boletos</button>
-      </div>
     `;
     grid.appendChild(card);
   });
