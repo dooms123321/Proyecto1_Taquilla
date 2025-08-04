@@ -57,7 +57,7 @@
             // lbID_funcion
             // 
             lbID_funcion.AutoSize = true;
-            lbID_funcion.Location = new Point(62, 9);
+            lbID_funcion.Location = new Point(119, 9);
             lbID_funcion.Name = "lbID_funcion";
             lbID_funcion.Size = new Size(99, 25);
             lbID_funcion.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             // txbIDFuncion
             // 
-            txbIDFuncion.Location = new Point(18, 37);
+            txbIDFuncion.Location = new Point(75, 37);
             txbIDFuncion.Name = "txbIDFuncion";
             txbIDFuncion.Size = new Size(182, 31);
             txbIDFuncion.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             // txbHorario
             // 
-            txbHorario.Location = new Point(233, 37);
+            txbHorario.Location = new Point(365, 37);
             txbHorario.Name = "txbHorario";
             txbHorario.Size = new Size(182, 31);
             txbHorario.TabIndex = 2;
@@ -83,7 +83,7 @@
             // lbHorario
             // 
             lbHorario.AutoSize = true;
-            lbHorario.Location = new Point(290, 9);
+            lbHorario.Location = new Point(422, 9);
             lbHorario.Name = "lbHorario";
             lbHorario.Size = new Size(72, 25);
             lbHorario.TabIndex = 3;
@@ -92,7 +92,7 @@
             // lbFecha
             // 
             lbFecha.AutoSize = true;
-            lbFecha.Location = new Point(82, 102);
+            lbFecha.Location = new Point(139, 102);
             lbFecha.Name = "lbFecha";
             lbFecha.Size = new Size(57, 25);
             lbFecha.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             // txbFecha
             // 
-            txbFecha.Location = new Point(18, 130);
+            txbFecha.Location = new Point(75, 130);
             txbFecha.Name = "txbFecha";
             txbFecha.Size = new Size(182, 31);
             txbFecha.TabIndex = 5;
@@ -109,7 +109,7 @@
             // lbPelicula
             // 
             lbPelicula.AutoSize = true;
-            lbPelicula.Location = new Point(80, 384);
+            lbPelicula.Location = new Point(103, 384);
             lbPelicula.Name = "lbPelicula";
             lbPelicula.Size = new Size(69, 25);
             lbPelicula.TabIndex = 6;
@@ -120,14 +120,14 @@
             cbxPelicula.FormattingEnabled = true;
             cbxPelicula.Location = new Point(18, 412);
             cbxPelicula.Name = "cbxPelicula";
-            cbxPelicula.Size = new Size(190, 33);
+            cbxPelicula.Size = new Size(239, 33);
             cbxPelicula.TabIndex = 7;
             cbxPelicula.SelectedIndexChanged += cbxPelicula_SelectedIndexChanged;
             // 
             // lbCantidadBoleto
             // 
             lbCantidadBoleto.AutoSize = true;
-            lbCantidadBoleto.Location = new Point(251, 102);
+            lbCantidadBoleto.Location = new Point(383, 102);
             lbCantidadBoleto.Name = "lbCantidadBoleto";
             lbCantidadBoleto.Size = new Size(147, 25);
             lbCantidadBoleto.TabIndex = 8;
@@ -135,7 +135,7 @@
             // 
             // txbCantBoletos
             // 
-            txbCantBoletos.Location = new Point(233, 130);
+            txbCantBoletos.Location = new Point(365, 130);
             txbCantBoletos.Name = "txbCantBoletos";
             txbCantBoletos.Size = new Size(182, 31);
             txbCantBoletos.TabIndex = 9;
@@ -144,7 +144,7 @@
             // lbSalaCine
             // 
             lbSalaCine.AutoSize = true;
-            lbSalaCine.Location = new Point(279, 384);
+            lbSalaCine.Location = new Point(395, 384);
             lbSalaCine.Name = "lbSalaCine";
             lbSalaCine.Size = new Size(83, 25);
             lbSalaCine.TabIndex = 10;
@@ -153,16 +153,16 @@
             // cbxSalaCine
             // 
             cbxSalaCine.FormattingEnabled = true;
-            cbxSalaCine.Location = new Point(233, 412);
+            cbxSalaCine.Location = new Point(308, 412);
             cbxSalaCine.Name = "cbxSalaCine";
-            cbxSalaCine.Size = new Size(182, 33);
+            cbxSalaCine.Size = new Size(239, 33);
             cbxSalaCine.TabIndex = 11;
             cbxSalaCine.SelectedIndexChanged += cbxSalaCine_SelectedIndexChanged;
             // 
             // lbIdioma
             // 
             lbIdioma.AutoSize = true;
-            lbIdioma.Location = new Point(71, 198);
+            lbIdioma.Location = new Point(103, 198);
             lbIdioma.Name = "lbIdioma";
             lbIdioma.Size = new Size(68, 25);
             lbIdioma.TabIndex = 12;
@@ -173,14 +173,14 @@
             cbxIdioma.FormattingEnabled = true;
             cbxIdioma.Location = new Point(18, 226);
             cbxIdioma.Name = "cbxIdioma";
-            cbxIdioma.Size = new Size(182, 33);
+            cbxIdioma.Size = new Size(239, 33);
             cbxIdioma.TabIndex = 13;
             cbxIdioma.SelectedIndexChanged += cbxIdioma_SelectedIndexChanged;
             // 
             // lbproyeccion
             // 
             lbproyeccion.AutoSize = true;
-            lbproyeccion.Location = new Point(290, 198);
+            lbproyeccion.Location = new Point(395, 198);
             lbproyeccion.Name = "lbproyeccion";
             lbproyeccion.Size = new Size(98, 25);
             lbproyeccion.TabIndex = 14;
@@ -189,15 +189,15 @@
             // cbxProyeccion
             // 
             cbxProyeccion.FormattingEnabled = true;
-            cbxProyeccion.Location = new Point(233, 226);
+            cbxProyeccion.Location = new Point(308, 226);
             cbxProyeccion.Name = "cbxProyeccion";
-            cbxProyeccion.Size = new Size(182, 33);
+            cbxProyeccion.Size = new Size(239, 33);
             cbxProyeccion.TabIndex = 15;
             cbxProyeccion.SelectedIndexChanged += cbxProyeccion_SelectedIndexChanged;
             // 
             // button2
             // 
-            button2.Location = new Point(640, 152);
+            button2.Location = new Point(948, 152);
             button2.Name = "button2";
             button2.Size = new Size(112, 34);
             button2.TabIndex = 17;
@@ -207,7 +207,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(899, 152);
+            button3.Location = new Point(1491, 152);
             button3.Name = "button3";
             button3.Size = new Size(112, 34);
             button3.TabIndex = 18;
@@ -218,10 +218,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(447, 207);
+            dataGridView1.Location = new Point(640, 207);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(610, 396);
+            dataGridView1.Size = new Size(1008, 396);
             dataGridView1.TabIndex = 19;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -229,7 +229,7 @@
             // 
             lbFunciones.AutoSize = true;
             lbFunciones.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbFunciones.Location = new Point(504, 37);
+            lbFunciones.Location = new Point(948, 37);
             lbFunciones.Name = "lbFunciones";
             lbFunciones.Size = new Size(418, 54);
             lbFunciones.TabIndex = 20;
@@ -237,7 +237,7 @@
             // 
             // Agregar
             // 
-            Agregar.Location = new Point(490, 152);
+            Agregar.Location = new Point(788, 152);
             Agregar.Name = "Agregar";
             Agregar.Size = new Size(112, 34);
             Agregar.TabIndex = 21;
@@ -249,7 +249,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 615);
+            ClientSize = new Size(1660, 615);
             Controls.Add(Agregar);
             Controls.Add(lbFunciones);
             Controls.Add(dataGridView1);

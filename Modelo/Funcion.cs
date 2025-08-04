@@ -8,19 +8,28 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Taquilla.Modelo
 {
-    public  class Funcion
+    public class Funcion
     {
         public int ID_Funcion { get; set; }
         public string Horario { get; set; }
         public DateTime Fecha { get; set; }
-        public int ID_Pelicula { get; set; }
         public int Cantidad_Boletos { get; set; }
+
+        // IDs
+        public int ID_Pelicula { get; set; }
         public int ID_SALA_DE_CINE { get; set; }
         public int ID_Idioma { get; set; }
         public int ID_Proyeccion { get; set; }
 
-        //  constructor de funciones con sus parametros
-        public Funcion(int id_funcion, string horario, DateTime fecha, int id_pelicula, int cantidad_boletos, int id_sala_de_cine, int id_idioma, int id_proyeccion)
+        // Propiedades descriptivas
+        public string Nombre_Pelicula { get; set; }
+        public int No_Sala { get; set; }
+        public string Descripcion_Idioma { get; set; } // "Doblada: Sí / Subtítulos: No"
+        public string Tipo_Proyeccion { get; set; }    // "2D", "3D", etc.
+
+        // Constructor con parámetros
+        public Funcion(int id_funcion, string horario, DateTime fecha, int id_pelicula, int cantidad_boletos,
+                       int id_sala_de_cine, int id_idioma, int id_proyeccion)
         {
             ID_Funcion = id_funcion;
             Horario = horario;
@@ -31,6 +40,8 @@ namespace Proyecto_Taquilla.Modelo
             ID_Idioma = id_idioma;
             ID_Proyeccion = id_proyeccion;
         }
+
+        // Constructor vacío
         public Funcion() { }
     }
 }
