@@ -1,12 +1,12 @@
 const peliculas = {
   "Cinépolis Cayalá": [
     {
-      nombre: "Amores Materialistas",
+      nombre: "Intensamente 2",
       duracion: "117 min",
-      clasificacion: "B12",
+      clasificacion: "A",
       doblada: "15:15, 20:30, 20:40",
       subtitulada: "18:00, 19:00, 21:45",
-      imagen: "https://via.placeholder.com/180x260?text=Amores+Materialistas"
+      imagen: "https://preview.redd.it/official-poster-for-inside-out-2-v0-kydd292s1ymc1.jpeg?auto=webp&s=1883bc3b14150de4d41c16880f8509b0c64c0f52"
     },
     {
       nombre: "Cómo entrenar a tu dragón",
@@ -14,7 +14,7 @@ const peliculas = {
       clasificacion: "A",
       doblada: "13:25, 16:10",
       subtitulada: "",
-      imagen: "https://via.placeholder.com/180x260?text=Cómo+entrenar+dragón"
+      imagen: "https://www.informador.mx/__export/1739397082528/sites/elinformador/img/2025/02/12/cxmo_entrenar_a_a_tu_dragxn_poster.jpg_524400468.jpg"
     },
     {
       nombre: "Jurassic World: Renace",
@@ -26,6 +26,7 @@ const peliculas = {
     }
   ]
 };
+
 
 function renderCartelera(complejo) {
   const titulo = document.getElementById('tituloComplejo');
