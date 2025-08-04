@@ -61,9 +61,6 @@ const peliculasCartelera = [
   },
   {
     nombre: "Intensamente 2",
-    horario: "5:30 PM",
-    region: "Guatemala",
-    categoria: "Infantil",
     imagen: "https://preview.redd.it/official-poster-for-inside-out-2-v0-kydd292s1ymc1.jpeg?auto=webp&s=1883bc3b14150de4d41c16880f8509b0c64c0f52"
   },
   {
@@ -71,24 +68,24 @@ const peliculasCartelera = [
     imagen: "https://image.tmdb.org/t/p/original/q0fGCmjLu42MPlSO9OYWpI5w86I.jpg"
   },
   {
-    nombre: "Paddington 3",
-    imagen: "https://via.placeholder.com/400x260?text=Paddington+3"
+    nombre: "Spider-Man: Sin Camino a Casa",
+    imagen: "https://pics.filmaffinity.com/spider_man_no_way_home-642739124-large.jpg"
   },
   {
-    nombre: "Los Becarios",
-    imagen: "https://via.placeholder.com/400x260?text=Los+Becarios"
+    nombre: "Avengers: Infinity War",
+    imagen: "https://cdn.flickeringmyth.com/wp-content/uploads/2018/04/Avengers-Infinity-War-posters-56-2.jpg"
   },
   {
-    nombre: "Guardianes Galácticos",
-    imagen: "https://via.placeholder.com/400x260?text=Guardianes+Galácticos"
+    nombre: "Los Guardinaes de la Galaxia",
+    imagen: "https://pics.filmaffinity.com/guardians_of_the_galaxy-595487268-large.jpg"
   },
   {
-    nombre: "La Casa Encantada",
-    imagen: "https://via.placeholder.com/400x260?text=La+Casa+Encantada"
+    nombre: "Cómo entrenar a tu dragón",
+    imagen: "https://www.informador.mx/__export/1739397082528/sites/elinformador/img/2025/02/12/cxmo_entrenar_a_a_tu_dragxn_poster.jpg_524400468.jpg"
   },
   {
-    nombre: "Código Final",
-    imagen: "https://via.placeholder.com/400x260?text=Código+Final"
+    nombre: "Destino Final",
+    imagen: "https://pics.filmaffinity.com/final_destination_bloodlines-790034090-large.jpg"
   },
 ];
 
@@ -115,10 +112,10 @@ function renderPeliculas(filtradas) {
 // 🎚️ Filtrado por región y categoría
 function aplicarFiltros() {
   const region = document.getElementById('filtroRegion').value;
-  const categoria = document.getElementById('filtroCategoria').value;
+  const categoria = document.getElementById('filtroCine').value;
   const filtradas = peliculasCartelera.filter(p => {
     return (region === "" || p.region === region) &&
-           (categoria === "" || p.categoria === categoria);
+           (cine === "" || p.cine === cine);
   });
   renderPeliculas(filtradas);
 }
@@ -132,7 +129,7 @@ document.getElementById('buscador').addEventListener('input', function(e) {
 
 // 🧩 Listeners para filtros
 document.getElementById('filtroRegion').addEventListener('change', aplicarFiltros);
-document.getElementById('filtroCategoria').addEventListener('change', aplicarFiltros);
+document.getElementById('filtroCine').addEventListener('change', aplicarFiltros);
 
 // 🚀 Carga inicial
 renderPeliculas(peliculasCartelera);
@@ -151,53 +148,6 @@ closeBtn.addEventListener('click', () => {
 window.addEventListener('click', e => {
   if (e.target === modal) modal.style.display = 'none';
 });
-
-let carrito = [];
-
-function actualizarCarritoUI() {
-  const lista = document.getElementById("cart-list");
-  const contador = document.getElementById("cart-count");
-  const total = document.getElementById("total-items");
-
-  lista.innerHTML = '';
-  carrito.forEach((item, i) => {
-    const li = document.createElement("li");
-    li.style.marginBottom = "10px";
-    li.innerHTML = `
-      🎬 <strong>${item.nombre}</strong> - ${item.horario} (${item.region}) 
-      <button style="margin-left:10px;" onclick="eliminarDelCarrito(${i})">❌</button>`;
-    lista.appendChild(li);
-  });
-
-  contador.textContent = carrito.length;
-  total.textContent = carrito.length;
-}
-
-function agregarAlCarrito(pelicula) {
-  carrito.push(pelicula);
-  actualizarCarritoUI();
-}
-
-function eliminarDelCarrito(index) {
-  carrito.splice(index, 1);
-  actualizarCarritoUI();
-}
-
-
-const modalCarrito = document.getElementById("modalCarrito");
-const cartBtn = document.getElementById("cart-btn");
-const closeCartBtn = document.querySelector(".close-cart");
-
-cartBtn.addEventListener("click", () => {
-  modalCarrito.style.display = "block";
-});
-closeCartBtn.addEventListener("click", () => {
-  modalCarrito.style.display = "none";
-});
-window.addEventListener("click", e => {
-  if (e.target === modalCarrito) modalCarrito.style.display = "none";
-});
-
 
  document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault(); // ¡Importante! Evita el envío tradicional del formulario
