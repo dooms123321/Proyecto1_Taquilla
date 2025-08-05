@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Proyecto_Taquilla.Modelo;
 using System.Collections.Generic;
+using Proyecto_Taquilla.Modelo;
+using System;
+using System.Collections.Generic;
 
 namespace Proyecto_Taquilla.Controlador
 {
@@ -16,15 +19,15 @@ namespace Proyecto_Taquilla.Controlador
             return PeliculaDAO.ObtenerPeliculas();
         }
 
-        public void CrearPelicula(int id, string nombre, string descripcion)
+        public void CrearPelicula(int id, string nombre, int idGenero, int idClasificacion, string sinopsis)
         {
-            Pelicula nueva = new Pelicula(id, nombre, descripcion);
+            Pelicula nueva = new Pelicula(id, nombre, idGenero, idClasificacion, sinopsis);
             PeliculaDAO.InsertarPelicula(nueva);
         }
 
-        public void ActualizarPelicula(int id, string nombre, string descripcion)
+        public void ActualizarPelicula(int id, string nombre, int idGenero, int idClasificacion, string sinopsis)
         {
-            Pelicula actualizada = new Pelicula(id, nombre, descripcion);
+            Pelicula actualizada = new Pelicula(id, nombre, idGenero, idClasificacion, sinopsis);
             PeliculaDAO.ActualizarPelicula(actualizada);
         }
 
@@ -34,5 +37,33 @@ namespace Proyecto_Taquilla.Controlador
         }
     }
 }
+
+//namespace Proyecto_Taquilla.Controlador
+//{
+//    public class PeliculaController
+//    {
+//        public List<Pelicula> ObtenerTodasLasPeliculas()
+//        {
+//            return PeliculaDAO.ObtenerPeliculas();
+//        }
+
+//        public void CrearPelicula(int id, string nombre, string descripcion)
+//        {
+//            Pelicula nueva = new Pelicula(id, nombre, descripcion);
+//            PeliculaDAO.InsertarPelicula(nueva);
+//        }
+
+//        public void ActualizarPelicula(int id, string nombre, string descripcion)
+//        {
+//            Pelicula actualizada = new Pelicula(id, nombre, descripcion);
+//            PeliculaDAO.ActualizarPelicula(actualizada);
+//        }
+
+//        public void EliminarPelicula(int id)
+//        {
+//            PeliculaDAO.EliminarPelicula(id);
+//        }
+//    }
+//}
 
 

@@ -25,51 +25,57 @@ namespace Proyecto_Taquilla.Vistas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //compara que no hay campos vacios y lanza un mensaje de error
+            // Validación de campos vacíos
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text))
             {
-                MessageBox.Show("No pueden haber campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No pueden haber campos vacíos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //trycatch para evitar que el programa explote si hay un error en la conexion
             try
             {
-                //reutilizacion de codigo creando objeto UsuarioDAO y usuarioAConsultar
+                // Consultar usuario en la base de datos
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
-                string usuarioNombre = txtUsuario.Text.Trim();  //aqui le enviamos el nombre del usuario al query para comparar despues
+                string usuarioNombre = txtUsuario.Text.Trim();
                 Usuario usuarioAConsultar = usuarioDAO.Query(usuarioNombre);
 
-                if (usuarioAConsultar != null && usuarioAConsultar.Contraseña == txtContraseña.Text)
+                // Validar existencia, contraseña y que sea un empleado
+                if (usuarioAConsultar != null &&
+                    usuarioAConsultar.Contraseña == txtContraseña.Text &&
+                    usuarioAConsultar.Id_empleado != null)
                 {
-                    MessageBox.Show("Bienvenido al SISTEMA", "Mensaje de bienvenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("¡Bienvenido al sistema!", "Acceso permitido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //guarda el usuario y su id en el controlador para acceder a ellos dentro del sistema
+                    // Guardar los datos del usuario conectado en el controlador estático
                     usuarioConectadoControlador.IdUsuario = usuarioAConsultar.Id_usuario;
                     usuarioConectadoControlador.NombreUsuario = usuarioAConsultar.UsuarioNombre;
+                    usuarioConectadoControlador.IdEmpleado = usuarioAConsultar.Id_empleado;
+                    usuarioConectadoControlador.Identificador = usuarioAConsultar.Identificador;
 
-                    //Falta modificar aquí - para que se guarde el usuario a bitacora
-                    //Ya se termino de modificar, ahora si lo guarda en la bitacora
+                    // Registrar en bitácora el inicio de sesión
                     BitacoraControlador bitacora = new BitacoraControlador();
                     bitacora.InsertBitacora(usuarioAConsultar.Id_usuario, 1000, "LGI");
 
+                    // Abrir ventana principal del sistema
                     vistaMDIGeneral ventanaMDIGeneral = new vistaMDIGeneral();
                     ventanaMDIGeneral.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña Incorrectas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Usuario o contraseña incorrectos, o no tiene acceso de empleado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsuario.Clear();
                     txtContraseña.Clear();
+                    txtUsuario.Focus();
                 }
             }
-            //control de excepciones con trycatch
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Procesar el Login\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Mostrar error amigable y registrar detalle técnico si se desea
+                MessageBox.Show("Error al procesar el inicio de sesión.\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsuario.Clear();
                 txtContraseña.Clear();
+                txtUsuario.Focus();
             }
         }
 
@@ -79,3 +85,54 @@ namespace Proyecto_Taquilla.Vistas
         }
     }
 }
+//private void btnAceptar_Click(object sender, EventArgs e)
+//{
+//    //compara que no hay campos vacios y lanza un mensaje de error
+//    if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text))
+//    {
+//        MessageBox.Show("No pueden haber campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//        return;
+//    }
+
+//    //trycatch para evitar que el programa explote si hay un error en la conexion
+//    try
+//    {
+//        //reutilizacion de codigo creando objeto UsuarioDAO y usuarioAConsultar
+//        UsuarioDAO usuarioDAO = new UsuarioDAO();
+//        string usuarioNombre = txtUsuario.Text.Trim();  //aqui le enviamos el nombre del usuario al query para comparar despues
+//        Usuario usuarioAConsultar = usuarioDAO.Query(usuarioNombre);
+
+//        if (usuarioAConsultar != null && usuarioAConsultar.Contraseña == txtContraseña.Text)
+//        {
+//            MessageBox.Show("Bienvenido al SISTEMA", "Mensaje de bienvenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+//            //guarda el usuario y su id en el controlador para acceder a ellos dentro del sistema
+//            usuarioConectadoControlador.IdUsuario = usuarioAConsultar.Id_usuario;
+//            usuarioConectadoControlador.NombreUsuario = usuarioAConsultar.UsuarioNombre;
+
+//            //Falta modificar aquí - para que se guarde el usuario a bitacora
+//            //Ya se termino de modificar, ahora si lo guarda en la bitacora
+//            BitacoraControlador bitacora = new BitacoraControlador();
+//            bitacora.InsertBitacora(usuarioAConsultar.Id_usuario, 1000, "LGI");
+
+//            vistaMDIGeneral ventanaMDIGeneral = new vistaMDIGeneral();
+//            ventanaMDIGeneral.Show();
+//            this.Hide();
+//        }
+//        else
+//        {
+//            MessageBox.Show("Usuario o contraseña Incorrectas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//            txtUsuario.Clear();
+//            txtContraseña.Clear();
+//        }
+//    }
+//    //control de excepciones con trycatch
+//    catch (Exception ex)
+//    {
+//        MessageBox.Show("Error al Procesar el Login\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//        txtUsuario.Clear();
+//        txtContraseña.Clear();
+//    }
+//}
+
+

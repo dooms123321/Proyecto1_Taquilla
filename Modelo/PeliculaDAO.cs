@@ -6,32 +6,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Proyecto_Taquilla.Controlador;
-
 namespace Proyecto_Taquilla.Modelo
 {
     public class PeliculaDAO
-    {                                                                                             //cambiar contraseña Cronopio0
-        private static string connectionString = "server=nozomi.proxy.rlwy.net;port=38006;database=Taquilla;user=root;password=SsXjimxwICYsLVqKRBFbNSBSfrEZrtUS;SslMode=none";
+    {
+        private static readonly string SQL_SELECT = "SELECT ID_Pelicula, Nombre, Sinopsis FROM pelicula";
+
+        private static readonly string SQL_INSERT = @"
+            INSERT INTO pelicula (ID_Pelicula, Nombre, Sinopsis)
+            VALUES (@id, @nombre, @sinopsis)";
+
+        private static readonly string SQL_UPDATE = @"
+            UPDATE pelicula SET 
+                Nombre = @nombre, 
+                Sinopsis = @sinopsis 
+            WHERE ID_Pelicula = @id";
+
+        private static readonly string SQL_DELETE = "DELETE FROM pelicula WHERE ID_Pelicula = @id";
 
         public static List<Pelicula> ObtenerPeliculas()
         {
             List<Pelicula> lista = new List<Pelicula>();
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (var conn = Conexion.ObtenerConexion())
             {
-                conn.Open();
-                string query = "SELECT * FROM pelicula";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                MySqlCommand cmd = new MySqlCommand(SQL_SELECT, conn);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Pelicula p = new Pelicula
-                    (
-                        reader.GetInt32("id_pelicula"),
-                        reader.GetString("nombre_pelicula"),
-                        reader.GetString("descripcion")
-                    );
-                    lista.Add(p);
+                    while (reader.Read())
+                    {
+                        Pelicula p = new Pelicula
+                        (
+                            reader.GetInt32("ID_Pelicula"),
+                            reader.GetString("Nombre"),
+                            reader.GetString("Sinopsis")
+                        );
+                        lista.Add(p);
+                    }
                 }
             }
             return lista;
@@ -39,47 +49,38 @@ namespace Proyecto_Taquilla.Modelo
 
         public static void InsertarPelicula(Pelicula pelicula)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (var conn = Conexion.ObtenerConexion())
             {
-                conn.Open();
-                string sql = "INSERT INTO pelicula (id_pelicula, nombre_pelicula, descripcion) VALUES (@id, @nombre, @descripcion)";
-                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
-                    cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre_Pelicula);
-                    cmd.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
-                    cmd.ExecuteNonQuery();
-                }
+                MySqlCommand cmd = new MySqlCommand(SQL_INSERT, conn);
+                cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
+                cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre);
+                cmd.Parameters.AddWithValue("@sinopsis", pelicula.Sinopsis);
+                cmd.ExecuteNonQuery();
             }
         }
 
         public static void ActualizarPelicula(Pelicula pelicula)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (var conn = Conexion.ObtenerConexion())
             {
-                conn.Open();
-                string query = "UPDATE pelicula SET nombre_pelicula = @nombre, descripcion = @descripcion WHERE id_pelicula = @id";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre_Pelicula);
-                cmd.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
+                MySqlCommand cmd = new MySqlCommand(SQL_UPDATE, conn);
+                cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre);
+                cmd.Parameters.AddWithValue("@sinopsis", pelicula.Sinopsis);
                 cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
                 int filasAfectadas = cmd.ExecuteNonQuery();
 
                 if (filasAfectadas == 0)
                 {
-                    MessageBox.Show("No se encontró ninguna película con ese ID");
+                    System.Windows.Forms.MessageBox.Show("No se encontró ninguna película con ese ID");
                 }
             }
         }
 
-
         public static void EliminarPelicula(int id_pelicula)
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (var conn = Conexion.ObtenerConexion())
             {
-                conn.Open();
-                string query = "DELETE FROM pelicula WHERE id_pelicula = @id";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlCommand cmd = new MySqlCommand(SQL_DELETE, conn);
                 cmd.Parameters.AddWithValue("@id", id_pelicula);
                 cmd.ExecuteNonQuery();
             }
