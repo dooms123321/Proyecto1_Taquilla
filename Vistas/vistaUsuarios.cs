@@ -60,7 +60,7 @@ namespace Proyecto_Taquilla.Vistas
                 return;
             }
 
-            controller.AgregarUsuario(id, nombre, contraseña);
+            controller.AgregarUsuario(id, nombre, contraseña,usuarioConectadoControlador.IdCliente, usuarioConectadoControlador.IdEmpleado, usuarioConectadoControlador.Identificador);
             CargarUsuarios();
             LimpiarCampos();
 
@@ -79,7 +79,7 @@ namespace Proyecto_Taquilla.Vistas
             string nombre = txtUsuario.Text.Trim();
             string contraseña = txtContraseña.Text.Trim();
 
-            controller.ActualizarUsuario(id, nombre, contraseña);
+            controller.ActualizarUsuario(id, nombre, contraseña, usuarioConectadoControlador.IdCliente, usuarioConectadoControlador.IdEmpleado, usuarioConectadoControlador.Identificador);
             CargarUsuarios();
             LimpiarCampos();
 
