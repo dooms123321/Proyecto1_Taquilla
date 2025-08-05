@@ -10,19 +10,16 @@ namespace Proyecto_Taquilla.Modelo
 {
     public class PeliculaDAO
     {
-        private static readonly string SQL_SELECT = "SELECT ID_Pelicula, Nombre, Sinopsis FROM pelicula";
+        // Incluir JOIN para obtener nombre del género y clasificación
+        private static readonly string SQL_SELECT = @"SELECT p.ID_Pelicula, p.Nombre, p.Sinopsis, g.ID_Genero, g.Nombre_Genero, c.ID_Clasificacion, c.Descripcion
+            FROM Pelicula p
+            INNER JOIN Genero g ON p.ID_Genero = g.ID_Genero
+            INNER JOIN Clasificacion_Edad c ON p.ID_Clasificacion = c.ID_Clasificacion";
 
-        private static readonly string SQL_INSERT = @"
-            INSERT INTO pelicula (ID_Pelicula, Nombre, Sinopsis)
-            VALUES (@id, @nombre, @sinopsis)";
-
-        private static readonly string SQL_UPDATE = @"
-            UPDATE pelicula SET 
-                Nombre = @nombre, 
-                Sinopsis = @sinopsis 
-            WHERE ID_Pelicula = @id";
-
-        private static readonly string SQL_DELETE = "DELETE FROM pelicula WHERE ID_Pelicula = @id";
+        private static readonly string SQL_INSERT = @"INSERT INTO Pelicula (ID_Pelicula, Nombre, Sinopsis, ID_Genero, ID_Clasificacion) 
+            VALUES (@id, @nombre, @sinopsis, @id_genero, @id_clasificacion)";
+        private static readonly string SQL_UPDATE = @"UPDATE Pelicula SET Nombre = @nombre, Sinopsis = @sinopsis, ID_Genero = @id_genero, ID_Clasificacion = @id_clasificacion WHERE ID_Pelicula = @id";
+        private static readonly string SQL_DELETE = "DELETE FROM Pelicula WHERE ID_Pelicula = @id";
 
         public static List<Pelicula> ObtenerPeliculas()
         {
@@ -35,11 +32,17 @@ namespace Proyecto_Taquilla.Modelo
                     while (reader.Read())
                     {
                         Pelicula p = new Pelicula
-                        (
-                            reader.GetInt32("ID_Pelicula"),
-                            reader.GetString("Nombre"),
-                            reader.GetString("Sinopsis")
-                        );
+                        {
+                            Id_Pelicula = reader.GetInt32("ID_Pelicula"),
+                            Nombre = reader.GetString("Nombre"),
+                            Sinopsis = reader.GetString("Sinopsis"),
+
+                            Id_Genero = reader.GetInt32("ID_Genero"),
+                            Nombre_Genero = reader.GetString("Nombre_Genero"),
+
+                            Id_Clasificacion = reader.GetInt32("ID_Clasificacion"),
+                            Nombre_Clasificacion = reader.GetString("Descripcion")
+                        };
                         lista.Add(p);
                     }
                 }
@@ -55,6 +58,8 @@ namespace Proyecto_Taquilla.Modelo
                 cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
                 cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre);
                 cmd.Parameters.AddWithValue("@sinopsis", pelicula.Sinopsis);
+                cmd.Parameters.AddWithValue("@id_genero", pelicula.Id_Genero);
+                cmd.Parameters.AddWithValue("@id_clasificacion", pelicula.Id_Clasificacion);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -66,6 +71,8 @@ namespace Proyecto_Taquilla.Modelo
                 MySqlCommand cmd = new MySqlCommand(SQL_UPDATE, conn);
                 cmd.Parameters.AddWithValue("@nombre", pelicula.Nombre);
                 cmd.Parameters.AddWithValue("@sinopsis", pelicula.Sinopsis);
+                cmd.Parameters.AddWithValue("@id_genero", pelicula.Id_Genero);
+                cmd.Parameters.AddWithValue("@id_clasificacion", pelicula.Id_Clasificacion);
                 cmd.Parameters.AddWithValue("@id", pelicula.Id_Pelicula);
                 int filasAfectadas = cmd.ExecuteNonQuery();
 
