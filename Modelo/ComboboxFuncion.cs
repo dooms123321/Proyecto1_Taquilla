@@ -13,9 +13,19 @@ namespace Proyecto_Taquilla.Modelo
         public int ID_Idioma { get; set; }
         public bool Doblada { get; set; }
         public bool Subtitulos { get; set; }
-
-        public string Descripcion => $"Doblada: {(Doblada ? "Sí" : "No")} / Subtítulos: {(Subtitulos ? "Sí" : "No")}";
+        //Sirve para el dsiplay de la vista Funcion
+        public string Descripcion
+        {
+            get
+            {
+                string texto = "";
+                if (Doblada) texto += "Doblada";
+                if (Subtitulos) texto += (texto != "" ? " y " : "") + "Subtitulada";
+                return texto == "" ? "Original" : texto;
+            }
+        }
     }
+
 
     public class TipoProyeccion
     {

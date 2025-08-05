@@ -21,30 +21,83 @@ namespace Proyecto_Taquilla.Controlador
         public static List<Funcion> ObtenerFunciones()
         {
             List<Funcion> lista = new List<Funcion>();
+
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT * FROM Funcion";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                string sql = @"
+            SELECT 
+                f.ID_Funcion, f.Horario, f.Fecha, f.Cantidad_Boletos,
+                f.ID_Pelicula, p.nombre_pelicula,
+                f.ID_SALA_DE_CINE, s.No_Sala,
+                f.ID_Idioma, i.Doblada, i.Subtitulos,
+                f.ID_Proyeccion, pr.Tipo_de_proyeccion
+            FROM Funcion f
+            JOIN pelicula p ON f.ID_Pelicula = p.id_pelicula
+            JOIN SALA_DE_CINE s ON f.ID_SALA_DE_CINE = s.ID_SALA_DE_CINE
+            JOIN Idioma i ON f.ID_Idioma = i.ID_Idioma
+            JOIN Proyeccion pr ON f.ID_Proyeccion = pr.ID_Proyeccion";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    Funcion funcion = new Funcion
-                    (
-                        reader.GetInt32("ID_Funcion"),
-                        reader.GetString("Horario"),
-                        reader.GetDateTime("Fecha"),
-                        reader.GetInt32("ID_Pelicula"),
-                        reader.GetInt32("Cantidad_Boletos"),
-                        reader.GetInt32("ID_SALA_DE_CINE"),
-                        reader.GetInt32("ID_Idioma"),
-                        reader.GetInt32("ID_Proyeccion")
-                    );
-                    lista.Add(funcion);
+                    while (reader.Read())
+                    {
+                        Funcion funcion = new Funcion
+                        {
+                            ID_Funcion = reader.GetInt32("ID_Funcion"),
+                            Horario = reader.GetString("Horario"),
+                            Fecha = reader.GetDateTime("Fecha"),
+                            Cantidad_Boletos = reader.GetInt32("Cantidad_Boletos"),
+
+                            ID_Pelicula = reader.GetInt32("ID_Pelicula"),
+                            Nombre_Pelicula = reader.GetString("nombre_pelicula"),
+
+                            ID_SALA_DE_CINE = reader.GetInt32("ID_SALA_DE_CINE"),
+                            No_Sala = reader.GetInt32("No_Sala"),
+
+                            ID_Idioma = reader.GetInt32("ID_Idioma"),
+                            Descripcion_Idioma = $"Doblada: {(reader.GetBoolean("Doblada") ? "Sí" : "No")} / Subtítulos: {(reader.GetBoolean("Subtitulos") ? "Sí" : "No")}",
+
+                            ID_Proyeccion = reader.GetInt32("ID_Proyeccion"),
+                            Tipo_Proyeccion = reader.GetString("Tipo_de_proyeccion")
+                        };
+
+                        lista.Add(funcion);
+                    }
                 }
             }
+
             return lista;
         }
+
+        //public static List<Funcion> ObtenerFunciones()
+        //{
+        //    List<Funcion> lista = new List<Funcion>();
+        //    using (MySqlConnection conn = new MySqlConnection(connectionString))
+        //    {
+        //        conn.Open();
+        //        string query = "SELECT * FROM Funcion";
+        //        MySqlCommand cmd = new MySqlCommand(query, conn);
+        //        MySqlDataReader reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            Funcion funcion = new Funcion
+        //            (
+        //                reader.GetInt32("ID_Funcion"),
+        //                reader.GetString("Horario"),
+        //                reader.GetDateTime("Fecha"),
+        //                reader.GetInt32("ID_Pelicula"),
+        //                reader.GetInt32("Cantidad_Boletos"),
+        //                reader.GetInt32("ID_SALA_DE_CINE"),
+        //                reader.GetInt32("ID_Idioma"),
+        //                reader.GetInt32("ID_Proyeccion")
+        //            );
+        //            lista.Add(funcion);
+        //        }
+        //    }
+        //    return lista;
+        //}
 
         // Insertar una nueva función
         public static void InsertarFuncion(Funcion funcion)

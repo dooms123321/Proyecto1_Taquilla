@@ -47,18 +47,22 @@ namespace Proyecto_Taquilla.Vistas
             cbxIdioma.DataSource = CatalogoDAO.ObtenerIdiomas();
             cbxIdioma.DisplayMember = "Descripcion";
             cbxIdioma.ValueMember = "ID_Idioma";
+            cbxIdioma.Refresh();//renderizar
 
             cbxProyeccion.DataSource = CatalogoDAO.ObtenerProyecciones();
             cbxProyeccion.DisplayMember = "Tipo_de_proyeccion";
             cbxProyeccion.ValueMember = "ID_Proyeccion";
+            cbxProyeccion.Refresh();//renderizar
 
             cbxPelicula.DataSource = CatalogoDAO.ObtenerPeliculas();
             cbxPelicula.DisplayMember = "Nombre";
             cbxPelicula.ValueMember = "id_pelicula";
+            cbxPelicula.Refresh();//renderizar
 
             cbxSalaCine.DataSource = CatalogoDAO.ObtenerSalas();
             cbxSalaCine.DisplayMember = "No_Sala";
             cbxSalaCine.ValueMember = "ID_SALA_DE_CINE";
+            cbxSalaCine.Refresh();//renderizar
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,8 +85,28 @@ namespace Proyecto_Taquilla.Vistas
         {
             FuncionControlador controlador = new FuncionControlador();
             List<Funcion> listaFunciones = controlador.ObtenerTodosFunciones();
-            dataGridView1.DataSource = listaFunciones;
+
+            var datosParaMostrar = listaFunciones.Select(f => new
+            {
+                f.ID_Funcion,
+                f.Horario,
+                Fecha = f.Fecha.ToString("dd/MM/yyyy"),
+                f.Cantidad_Boletos,
+                Pelicula = f.Nombre_Pelicula,           // Muestra el nombre de la película
+                Sala = f.No_Sala,                        // Muestra el número de sala
+                Idioma = f.Descripcion_Idioma,          // Muestra la descripción del idioma
+                Proyeccion = f.Tipo_Proyeccion          // Muestra tipo de proyección
+            }).ToList();
+
+            dataGridView1.DataSource = datosParaMostrar;
         }
+
+        //private void CargarDatos()
+        //{
+        //    FuncionControlador controlador = new FuncionControlador();
+        //    List<Funcion> listaFunciones = controlador.ObtenerTodosFunciones();
+        //    dataGridView1.DataSource = listaFunciones;
+        //}
 
         private void LimpiarCampos()
         {
