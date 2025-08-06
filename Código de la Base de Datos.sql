@@ -195,3 +195,24 @@ CREATE TABLE bitacora (
     PRIMARY KEY (bitid),
     FOREIGN KEY (usuid) REFERENCES Usuarios(ID_Usuario)
 );
+
+CREATE VIEW Vista_Peliculas_Taquilleras AS
+SELECT 
+    P.Nombre            AS Pelicula,
+    YEAR(F.Fecha)       AS Anio,
+    MONTH(F.Fecha)      AS Mes,
+    WEEK(F.Fecha, 1)    AS Semana,
+    COUNT(B.ID_Boleto)  AS BoletosVendidos
+FROM 
+    Boleto B
+    INNER JOIN Funcion F          ON B.ID_Funcion = F.ID_Funcion
+    INNER JOIN Pelicula P         ON F.ID_Pelicula = P.ID_Pelicula
+    INNER JOIN Detalles_Compra DC ON B.ID_Boleto = DC.ID_Boleto
+    INNER JOIN Compra C           ON DC.ID_Compra = C.ID_Compra
+GROUP BY 
+    P.Nombre, 
+    YEAR(F.Fecha), 
+    MONTH(F.Fecha), 
+    WEEK(F.Fecha, 1)
+ORDER BY 
+    BoletosVendidos DESC;
