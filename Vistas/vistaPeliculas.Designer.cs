@@ -40,6 +40,10 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            Generolb = new Label();
+            label6 = new Label();
+            cbxGenero = new ComboBox();
+            cbxClasificacion = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvPeliculas).BeginInit();
             SuspendLayout();
             // 
@@ -47,35 +51,39 @@
             // 
             dgvPeliculas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPeliculas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPeliculas.Location = new Point(457, 22);
+            dgvPeliculas.Location = new Point(571, 28);
+            dgvPeliculas.Margin = new Padding(4);
             dgvPeliculas.Name = "dgvPeliculas";
             dgvPeliculas.ReadOnly = true;
             dgvPeliculas.RowHeadersWidth = 51;
-            dgvPeliculas.Size = new Size(653, 446);
+            dgvPeliculas.Size = new Size(816, 558);
             dgvPeliculas.TabIndex = 0;
             dgvPeliculas.SelectionChanged += dgvPeliculas_SelectionChanged;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(70, 250);
+            txtNombre.Location = new Point(55, 241);
+            txtNombre.Margin = new Padding(4);
             txtNombre.Multiline = true;
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(202, 27);
+            txtNombre.Size = new Size(252, 33);
             txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(70, 331);
+            txtDescripcion.Location = new Point(55, 343);
+            txtDescripcion.Margin = new Padding(4);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(293, 27);
+            txtDescripcion.Size = new Size(476, 31);
             txtDescripcion.TabIndex = 2;
             // 
             // btnAgregar
             // 
             btnAgregar.Font = new Font("Times New Roman", 12F);
-            btnAgregar.Location = new Point(26, 439);
+            btnAgregar.Location = new Point(571, 598);
+            btnAgregar.Margin = new Padding(4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(118, 36);
             btnAgregar.TabIndex = 3;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -84,9 +92,10 @@
             // btnEditar
             // 
             btnEditar.Font = new Font("Times New Roman", 12F);
-            btnEditar.Location = new Point(151, 439);
+            btnEditar.Location = new Point(737, 598);
+            btnEditar.Margin = new Padding(4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(94, 29);
+            btnEditar.Size = new Size(118, 36);
             btnEditar.TabIndex = 4;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -95,9 +104,10 @@
             // btnEliminar
             // 
             btnEliminar.Font = new Font("Times New Roman", 12F);
-            btnEliminar.Location = new Point(283, 439);
+            btnEliminar.Location = new Point(1269, 598);
+            btnEliminar.Margin = new Padding(4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(118, 36);
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -105,15 +115,17 @@
             // 
             // txtIdPelicula
             // 
-            txtIdPelicula.Location = new Point(70, 165);
+            txtIdPelicula.Location = new Point(55, 135);
+            txtIdPelicula.Margin = new Padding(4);
             txtIdPelicula.Name = "txtIdPelicula";
-            txtIdPelicula.Size = new Size(125, 27);
+            txtIdPelicula.Size = new Size(155, 31);
             txtIdPelicula.TabIndex = 6;
             // 
             // btnLimpiar
             // 
             btnLimpiar.Font = new Font("Times New Roman", 12F);
-            btnLimpiar.Location = new Point(151, 478);
+            btnLimpiar.Location = new Point(189, 598);
+            btnLimpiar.Margin = new Padding(4);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(0, 0);
             btnLimpiar.TabIndex = 7;
@@ -124,9 +136,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            label1.Location = new Point(70, 130);
+            label1.Location = new Point(55, 91);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(98, 23);
+            label1.Size = new Size(123, 26);
             label1.TabIndex = 15;
             label1.Text = "Id Pelicula";
             // 
@@ -134,9 +147,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            label2.Location = new Point(70, 215);
+            label2.Location = new Point(55, 198);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(84, 23);
+            label2.Size = new Size(104, 26);
             label2.TabIndex = 16;
             label2.Text = "Peliculas";
             // 
@@ -144,27 +158,72 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            label3.Location = new Point(70, 305);
+            label3.Location = new Point(55, 310);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(108, 23);
+            label3.Size = new Size(95, 26);
             label3.TabIndex = 17;
-            label3.Text = "Descripcion";
+            label3.Text = "Sinopsis";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(93, 22);
+            label4.Location = new Point(116, 28);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(240, 35);
+            label4.Size = new Size(285, 41);
             label4.TabIndex = 18;
             label4.Text = "CRUD - Peliculas";
             // 
+            // Generolb
+            // 
+            Generolb.AutoSize = true;
+            Generolb.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Generolb.Location = new Point(55, 426);
+            Generolb.Name = "Generolb";
+            Generolb.Size = new Size(88, 26);
+            Generolb.TabIndex = 19;
+            Generolb.Text = "Genero";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(290, 426);
+            label6.Name = "label6";
+            label6.Size = new Size(144, 26);
+            label6.TabIndex = 20;
+            label6.Text = "Clasificacion";
+            // 
+            // cbxGenero
+            // 
+            cbxGenero.FormattingEnabled = true;
+            cbxGenero.Location = new Point(53, 466);
+            cbxGenero.Name = "cbxGenero";
+            cbxGenero.Size = new Size(182, 33);
+            cbxGenero.TabIndex = 21;
+            cbxGenero.SelectedIndexChanged += cbxGenero_SelectedIndexChanged;
+            // 
+            // cbxClasificacion
+            // 
+            cbxClasificacion.FormattingEnabled = true;
+            cbxClasificacion.Location = new Point(290, 466);
+            cbxClasificacion.Name = "cbxClasificacion";
+            cbxClasificacion.Size = new Size(182, 33);
+            cbxClasificacion.TabIndex = 22;
+            cbxClasificacion.SelectedIndexChanged += cbxClasificacion_SelectedIndexChanged;
+            // 
             // vistaPeliculas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1132, 519);
+            ClientSize = new Size(1415, 657);
+            Controls.Add(cbxClasificacion);
+            Controls.Add(cbxGenero);
+            Controls.Add(label6);
+            Controls.Add(Generolb);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -177,6 +236,7 @@
             Controls.Add(txtDescripcion);
             Controls.Add(txtNombre);
             Controls.Add(dgvPeliculas);
+            Margin = new Padding(4);
             Name = "vistaPeliculas";
             Text = "vistaPeliculas";
             Load += vistaPeliculas_Load;
@@ -199,5 +259,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label Generolb;
+        private Label label6;
+        private ComboBox cbxGenero;
+        private ComboBox cbxClasificacion;
     }
 }

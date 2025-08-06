@@ -10,21 +10,27 @@ public class Pelicula
     public string Nombre { get; set; }
     public string Sinopsis { get; set; }
 
+    // IDs usados para guardar en base de datos
+    public int Id_Genero { get; set; }
+    public int Id_Clasificacion { get; set; }
+
+    // Nombres usados solo para mostrar en pantalla
     public string Nombre_Genero { get; set; }
-    public string Clasificacion { get; set; }
+    public string Nombre_Clasificacion { get; set; }
 
     public Pelicula() { }
 
-    public Pelicula(int id, string nombre, string sinopsis, string genero, string clasificacion)
+    public Pelicula(int id, string nombre, string sinopsis, int idGenero, string nombreGenero, int idClasificacion, string nombreClasificacion)
     {
         Id_Pelicula = id;
         Nombre = nombre;
         Sinopsis = sinopsis;
-        Nombre_Genero = genero;
-        Clasificacion = clasificacion;
+        Id_Genero = idGenero;
+        Nombre_Genero = nombreGenero;
+        Id_Clasificacion = idClasificacion;
+        Nombre_Clasificacion = nombreClasificacion;
     }
 }
-
 
 
 //namespace Proyecto_Taquilla.Modelo

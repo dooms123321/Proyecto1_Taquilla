@@ -4,11 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Proyecto_Taquilla.Modelo;
-using System.Collections.Generic;
-using Proyecto_Taquilla.Modelo;
-using System;
-using System.Collections.Generic;
 
 namespace Proyecto_Taquilla.Controlador
 {
@@ -19,15 +14,29 @@ namespace Proyecto_Taquilla.Controlador
             return PeliculaDAO.ObtenerPeliculas();
         }
 
-        public void CrearPelicula(int id, string nombre, int idGenero, int idClasificacion, string sinopsis)
+        public void CrearPelicula(int id, string nombre, string sinopsis, int idGenero, int idClasificacion)
         {
-            Pelicula nueva = new Pelicula(id, nombre, idGenero, idClasificacion, sinopsis);
+            Pelicula nueva = new Pelicula
+            {
+                Id_Pelicula = id,
+                Nombre = nombre,
+                Sinopsis = sinopsis,
+                Id_Genero = idGenero,
+                Id_Clasificacion = idClasificacion
+            };
             PeliculaDAO.InsertarPelicula(nueva);
         }
 
-        public void ActualizarPelicula(int id, string nombre, int idGenero, int idClasificacion, string sinopsis)
+        public void ActualizarPelicula(int id, string nombre, string sinopsis, int idGenero, int idClasificacion)
         {
-            Pelicula actualizada = new Pelicula(id, nombre, idGenero, idClasificacion, sinopsis);
+            Pelicula actualizada = new Pelicula
+            {
+                Id_Pelicula = id,
+                Nombre = nombre,
+                Sinopsis = sinopsis,
+                Id_Genero = idGenero,
+                Id_Clasificacion = idClasificacion
+            };
             PeliculaDAO.ActualizarPelicula(actualizada);
         }
 
